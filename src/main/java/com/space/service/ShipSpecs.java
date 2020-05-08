@@ -20,7 +20,7 @@ public class ShipSpecs {
         if (after != null) {
             Long prodDate = makeOnlyYear(after);
             System.out.println("after: " + prodDate);
-            return (root, query, cb) -> prodDate == null ? null : cb.greaterThanOrEqualTo(root.get("prodDate"), new Date(prodDate));
+            return (root, query, cb) -> prodDate == null ? null : cb.greaterThan(root.get("prodDate"), new Date(prodDate));
         }
         return null;
     }
